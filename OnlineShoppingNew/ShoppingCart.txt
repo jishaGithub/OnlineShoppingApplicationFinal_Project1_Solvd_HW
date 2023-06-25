@@ -1,0 +1,1 @@
+Product ID:1 ,Product Name: Apples ,Product Category: FRUITS ,Product Price: 3.99-5Product ID:3 ,Product Name: Grapes ,Product Category: FRUITS ,Product Price: 1.99-7Product ID:1 ,Product Name: Apples ,Product Category: FRUITS ,Product Price: 3.99-5Product ID:3 ,Product Name: Grapes ,Product Category: FRUITS ,Product Price: 1.99-7
