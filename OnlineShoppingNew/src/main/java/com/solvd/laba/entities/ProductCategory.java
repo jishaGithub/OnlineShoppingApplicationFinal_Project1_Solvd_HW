@@ -17,14 +17,16 @@ public enum ProductCategory {
             return ProductCategory.CHEESE.salesTax;
         }
     };
+
     private final String name;
     private final double salesTax;
-    ProductCategory(String name,double salesTax){
+
+    ProductCategory(String name, double salesTax){
         this.name = name;
         this.salesTax = salesTax;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
