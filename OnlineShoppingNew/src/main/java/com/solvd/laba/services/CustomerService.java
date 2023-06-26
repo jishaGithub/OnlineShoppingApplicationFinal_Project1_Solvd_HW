@@ -31,7 +31,7 @@ public class CustomerService extends Customer {
         this.customer = customer;
     }
 
-    public static void getOrderHistory(){
+    public static void getOrderHistory() {
         logger.info("-------ORDER HISTORY------");
         orderHistory.display();
     }
@@ -54,7 +54,7 @@ public class CustomerService extends Customer {
         cart.addProducts(product,count);
     }
 
-    public void removeProductsFromCart(Product product){
+    public void removeProductsFromCart(Product product) {
         cart.removeProducts(product);
     }
 
@@ -63,7 +63,7 @@ public class CustomerService extends Customer {
         cart.viewCart();
     }
 
-    public Cart getCart(){
+    public Cart getCart() {
         return cart;
     }
 
@@ -100,7 +100,7 @@ public class CustomerService extends Customer {
         }
     }
 
-    public void setShippingInfo(String shippingCompany, ShippingPreference shippingPreference){
+    public void setShippingInfo(String shippingCompany, ShippingPreference shippingPreference) {
         shipping = new Shipping(shippingCompany, shippingPreference);
         isShippingInfoSet = true;
         logger.info("Shipping information set for customer ID:"+customer.getId());
@@ -121,7 +121,7 @@ public class CustomerService extends Customer {
         try {
             long cardNumberLong = Long.parseLong(cardNumber);
         } catch (NumberFormatException nfe) {
-            logger.error("Card Number Format Error");
+            logger.error("Card Number Format Error" + nfe.getMessage());
             return isPaymentInfoSet;
         }
         try {
