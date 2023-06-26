@@ -1,5 +1,6 @@
 package com.solvd.laba.exceptions;
-public class PhoneNumberLengthException extends Exception {
+
+public class PhoneNumberLengthException extends Exception {    
     private final String phoneNumber;
     private final String message;
 
