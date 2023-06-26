@@ -11,7 +11,6 @@ public class NotValidCardNoException extends Exception {
 
     @Override
     public String getMessage() {
-
         return errorMsg+" Card No:"+ cardNo.substring(cardNo.length()-4);
     }
 }
