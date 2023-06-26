@@ -12,5 +12,6 @@ public enum DiscountType {
             return total*.90;
         }
     };
+
     public abstract double calculateDiscount(double total);
 }
