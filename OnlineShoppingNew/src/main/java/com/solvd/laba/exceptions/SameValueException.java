@@ -1,4 +1,5 @@
 package com.solvd.laba.exceptions;
+
 public class SameValueException extends Exception{
     private final String sameValue;
     public SameValueException(String sameValue){
