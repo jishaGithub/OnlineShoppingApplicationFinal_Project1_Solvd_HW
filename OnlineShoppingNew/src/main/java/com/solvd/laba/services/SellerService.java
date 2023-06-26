@@ -92,4 +92,5 @@ public class SellerService extends Seller {
         System.out.println("The total value for " + product.getProductName() + " is: " + totalValue);
         return totalValue;
     }
+    
 }
