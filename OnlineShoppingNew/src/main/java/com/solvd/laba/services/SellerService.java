@@ -89,7 +89,7 @@ public class SellerService extends Seller {
     public double productValue(Product product) {
         Function<Product, Double> calculateTotalValue = p -> p.getProductPrice() * p.getProductStock();
         double totalValue = calculateTotalValue.apply(product);
-        System.out.println("The total value for " + product.getProductName() + " is: " + totalValue);
+        logger.info("The total value for " + product.getProductName() + " is: " + totalValue);
         return totalValue;
     }
     
