@@ -50,6 +50,7 @@ public class AdminService extends Admin {
             logger.error(sve.getMessage());
         }
     }
+    
     public void viewCustomersAddresses() {
         logger.info("-----CUSTOMER ADDRESSES------");
         userAddressHashSet.stream().forEach(Address -> logger.info(Address));
