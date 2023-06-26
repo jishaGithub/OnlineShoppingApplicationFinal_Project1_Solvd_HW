@@ -13,6 +13,7 @@ import java.util.function.Predicate;
 
 public class SellerService extends Seller {
     private static final Logger logger = LogManager.getLogger(SellerService.class);
+    
     public SellerService(Seller seller) {
         super(seller);
     }
