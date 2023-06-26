@@ -16,12 +16,11 @@ public class linkedList<T> {
     Node<T> head;
     private int length = 0;
 
-    public linkedList() { 
-        this.head = null; 
-    }
+    public linkedList() { this.head = null; }
 
     public void add(T element) {
         Node<T> newNode = new Node<>(element);
+
         if (head == null) {
             head = newNode;
         } else {
@@ -33,7 +32,22 @@ public class linkedList<T> {
         }
         length++;
     }
-    
+    /*
+    public void add(T data)
+    {
+        node<T> currentNode = new node<>(data);
+        if (this.head == null) {
+            head = currentNode;
+        }
+        else {
+            node<T> currentLL = head;
+            while (currentLL.next != null) {
+                currentLL = currentLL.next;           }
+            currentLL.next = currentNode;
+        }
+        length++;
+    }
+*/
     public void remove(T removeNode)
     {
         Node<T> prev = new Node<>(null);
@@ -41,6 +55,8 @@ public class linkedList<T> {
         Node<T> next = head.next;
         Node<T> currentNode = head;
         boolean exists = false;
+
+        // If head node needs to be deleted
         if (head.data == removeNode) {
             head = head.next;
             exists = true;
@@ -48,6 +64,7 @@ public class linkedList<T> {
         while (currentNode.next != null) {
             if (String.valueOf(currentNode.data).equals(
                     String.valueOf(removeNode))) {
+
                  prev.next = next;
                  exists = true;
                 break;
@@ -76,7 +93,6 @@ public class linkedList<T> {
         head = null;
         length = 0;
     }
-    
     public boolean empty()
     {
         if (head == null) {
@@ -85,16 +101,18 @@ public class linkedList<T> {
         return false;
     }
 
-    public int length() { 
-        return this.length; 
-    }
+    public int length() { return this.length; }
+
 
     public void display() {
+
         Node current = head;
+
         if(head == null) {
             System.out.println("Empty");
             return;
         }
+
         while(current != null) {
             System.out.print(current.data + "\n");
             current = current.next;
@@ -102,3 +120,5 @@ public class linkedList<T> {
         System.out.println();
     }
 }
+
+

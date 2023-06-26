@@ -1,13 +1,14 @@
 package com.solvd.laba.entities;
 
-public class Address  {
-    private int id = 0 ;
+public class Address {
+    private int id = 0;
+    private String street;
     private String city;
     private String state;
     private int zip;
-    
+
     public Address(String street, String city, String state, int zip) {
-        this.setId(this.getId()+1);
+        this.setId(this.getId() + 1);
         this.street = street;
         this.city = city;
         this.state = state;
@@ -16,7 +17,7 @@ public class Address  {
 
     @Override
     public String toString() {
-        return this.street + " , " + this.city + " , " + this.state + " , " + zip;
+        return this.street + ", " + this.city + ", " + this.state + ", " + zip;
     }
 
     public String getState() {
@@ -43,8 +44,6 @@ public class Address  {
         this.city = city;
     }
 
-    private String street;
-
     public String getStreet() {
         return street;
     }
@@ -59,7 +58,8 @@ public class Address  {
             return false;
         }
         Address address = (Address) obj;
-        return (address.street == this.street && address.city == this.city && address.state == this.state && address.zip == this.zip);
+        return (address.street.equals(this.street) && address.city.equals(this.city)
+                && address.state.equals(this.state) && address.zip == this.zip);
     }
 
     @Override

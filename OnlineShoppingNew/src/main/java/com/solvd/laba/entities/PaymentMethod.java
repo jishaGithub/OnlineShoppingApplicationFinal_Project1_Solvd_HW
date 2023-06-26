@@ -12,5 +12,5 @@ public enum PaymentMethod {
 
     public String getName() {
         return name;
-    }    
+    }
 }

@@ -1,5 +1,6 @@
 package com.solvd.laba.entities;
 
+import com.solvd.laba.exceptions.SameValueException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,46 +8,48 @@ import org.apache.logging.log4j.Logger;
 public class Seller extends User {
     private static final Logger logger = LogManager.getLogger(Seller.class);
     private int productId = 1;
-    
-    public Seller(int userId, String name, String emailAddress) {
-        this.userId = userId;
+
+    public Seller(int id, String name, String emailAddress) {
+        this.id = id;
         this.name = name;
         this.emailAddress = emailAddress;
-        sellerHashSet.add(this.userId + " " + this.emailAddress);
+        sellerHashSet.add(this.id + " " + this.emailAddress);
     }
-    
+
     public Seller(Seller seller) {
-        this.userId = seller.getUserId();
+        this.id = seller.getId();
         this.name = seller.getName();
         this.emailAddress = seller.getEmailAddress();
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Seller)) {
             return false;
         }
         Seller seller = (Seller) obj;
-        return (seller.userId == this.userId && seller.name == this.name);
+        return this.name.equals(seller.name) && this.emailAddress.equals(seller.emailAddress);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 31;
         int result = 1;
-        result = PRIME * result + this.userId;
+        result = PRIME * result + this.id;
         return result;
     }
 
     @Override
     public String toString() {
-        return this.userId + " " + this.userName + " " + this.password + " " + this.emailAddress;
+        return this.id + " " + this.userName + " " + this.password + " " + this.emailAddress;
     }
 
     @Override
     public void displayWelcomeMsg() {
-        logger.log(Level.INFO, this.userId + " successfully called displayWelcomeMsg().");
-        System.out.println("Welcome to seller portal");
+        logger.info("Welcome to the seller portal");
     }
 
     @Override
@@ -55,35 +58,13 @@ public class Seller extends User {
             if (userName.equals(password)) {
                 throw new SameValueException(userName);
             }
-            if ((userName.equals(this.userName)) && (password.equals(this.password))) {
-                System.out.println(this.userId + " logged in successfully");
-                logger.log(Level.INFO, this.userId + " logged in successfully.");
+            if (userName.equals(this.userName) && password.equals(this.password)) {
+                logger.log(Level.INFO, "Seller ID: " + this.id + " logged in successfully.");
                 this.displayWelcomeMsg();
                 isLoginSuccessful = true;
             }
         } else {
-            System.out.println("Login Credentials are not set");
+            logger.info("Login credentials are not set");
         }
-    }
-
-    public void setLoginCredentials(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-        this.isLoginCredentialsSet = true;
-    }
-    
-    public static void viewProductsForSale() {
-        System.out.println("******* The Products List *******");
-        for (Product product : productHashSet) {
-            System.out.println(product);
-        }
-    }
-
-    public static void viewSellers() {
-        System.out.println("\n----SELLER LIST-----");
-        for (String sellers : sellerHashSet) {
-            System.out.println(sellers);
-        }
-        System.out.println();
     }
 }
