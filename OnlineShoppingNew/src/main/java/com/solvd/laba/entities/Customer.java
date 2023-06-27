@@ -24,7 +24,7 @@ public class Customer extends User {
             if (!phoneNumber.contains("123456789") || phoneNumber.startsWith("000")) {
                 throw new PhoneNumberLengthException("Phone number is zero or Not valid",phoneNumber);
             }
-        } catch(PhoneNumberLengthException pe) {
+        } catch (PhoneNumberLengthException pe) {
             logger.info(pe.getMessage());
         }
         this.id = customerId;
