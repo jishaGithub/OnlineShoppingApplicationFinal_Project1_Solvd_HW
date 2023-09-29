@@ -1,0 +1,1 @@
+Product ID: 1, Product Name: Apples, Product Category: FRUITS, Product Price: 2.0-2Product ID: 1, Product Name: Apples, Product Category: FRUITS, Product Price: 2.0-2Product ID: 3, Product Name: Grapes, Product Category: FRUITS, Product Price: 4.0-7Product ID: 3, Product Name: Grapes, Product Category: FRUITS, Product Price: 4.0-7
